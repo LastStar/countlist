@@ -34,7 +34,7 @@ def gem_file
 end
 
 def replace_header(head, header_name)
-  head.sub!(/(\.#{header_name}\s*= ').*'/) { "#{$1}#{send(header_name)}'"}
+  # head.sub!(/(\.#{header_name}\s*= ').*'/) { "#{$1}#{send(header_name)}'"}
 end
 
 #############################################################################
@@ -45,19 +45,15 @@ end
 
 task :default => :spec
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
+require 'rspec/core'
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec) do |spec|
+  spec.pattern = FileList['spec/**/*_spec.rb']
 end
 
-desc "Generate RCov test coverage and open in your browser"
-task :coverage do
-  require 'rcov'
-  sh "rm -fr coverage"
-  sh "rcov test/test_*.rb"
-  sh "open coverage/index.html"
+RSpec::Core::RakeTask.new(:rcov) do |spec|
+  spec.pattern = 'spec/**/*_spec.rb'
+  spec.rcov = true
 end
 
 require 'rake/rdoctask'

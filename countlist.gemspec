@@ -12,22 +12,21 @@ Gem::Specification.new do |s|
   ## Leave these as is they will be modified for you by the rake gemspec task.
   ## If your rubyforge_project name is different, then edit it and comment out
   ## the sub! line in the Rakefile
-  s.name              = 'NAME'
-  s.version           = '0.0'
-  s.date              = '2010-01-01'
-  s.rubyforge_project = 'NAME'
+  s.name              = 'countlist'
+  s.version           = '0.1.0'
+  s.date              = '2011-11-25'
 
   ## Make sure your summary is short. The description may be as long
   ## as you like.
-  s.summary     = "Short description used in Gem listings."
-  s.description = "Long description. Maybe copied from the README."
+  s.summary     = "Simple country and states list."
+  s.description = "Simple country and staes list for ruby. Without rails helpers and with country iso codes."
 
   ## List the primary authors. If there are a bunch of authors, it's probably
   ## better to set the email to an email list or something. If you don't have
   ## a custom homepage, consider using your GitHub URL or the like.
-  s.authors  = ["John Doe"]
-  s.email    = 'jdoe@example.com'
-  s.homepage = 'http://example.com/NAME'
+  s.authors  = ["Josef Pospíšil"]
+  s.email    = 'josef.pospisil@laststar.eu'
+  s.homepage = 'http://github.com/LastStar/countlist'
 
   ## This gets added to the $LOAD_PATH so that 'lib/NAME.rb' can be required as
   ## require 'NAME.rb' or'/lib/NAME/file.rb' can be as require 'NAME/file.rb'
@@ -37,9 +36,6 @@ Gem::Specification.new do |s|
   s.require_paths << 'ext'
   s.extensions = %w[ext/extconf.rb]
 
-  ## If your gem includes any executables, list them here.
-  s.executables = ["name"]
-
   ## Specify any RDoc options here. You'll want to add your README and
   ## LICENSE files to the extra_rdoc_files list.
   s.rdoc_options = ["--charset=UTF-8"]
@@ -47,20 +43,25 @@ Gem::Specification.new do |s|
 
   ## List your runtime dependencies here. Runtime dependencies are those
   ## that are needed for an end user to actually USE your code.
-  s.add_dependency('DEPNAME', [">= 1.1.0", "< 2.0.0"])
+  # s.add_dependency('DEPNAME', [">= 1.1.0", "< 2.0.0"])
 
   ## List your development dependencies here. Development dependencies are
   ## those that are only needed during development
-  s.add_development_dependency('DEVDEPNAME', [">= 1.1.0", "< 2.0.0"])
+  # s.add_development_dependency('DEVDEPNAME', [">= 1.1.0", "< 2.0.0"])
 
   ## Leave this section as-is. It will be automatically generated from the
   ## contents of your Git repository via the gemspec task. DO NOT REMOVE
   ## THE MANIFEST COMMENTS, they are used as delimiters by the task.
   # = MANIFEST =
-  s.files = %w[]
+  s.files = %w[
+    README.md
+    Rakefile
+    countlist.gemspec
+    lib/countlist.rb
+  ]
   # = MANIFEST =
 
   ## Test files will be grabbed from the file list. Make sure the path glob
   ## matches what you actually use.
-  s.test_files = s.files.select { |path| path =~ /^test\/test_.*\.rb/ }
+  s.test_files = s.files.select { |path| path =~ /^spec\/.*_spec\.rb/ }
 end
