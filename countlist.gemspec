@@ -54,10 +54,31 @@ Gem::Specification.new do |s|
   ## THE MANIFEST COMMENTS, they are used as delimiters by the task.
   # = MANIFEST =
   s.files = %w[
+    Gemfile
+    Gemfile.lock
     README.md
     Rakefile
     countlist.gemspec
+    data/en.yml
+    data/iso.yml
+    data/states/au.yml
+    data/states/br.yml
+    data/states/ca.yml
+    data/states/cu.yml
+    data/states/de.yml
+    data/states/dk.yml
+    data/states/es.yml
+    data/states/hr.yml
+    data/states/in.yml
+    data/states/it.yml
+    data/states/mx.yml
+    data/states/no.yml
+    data/states/nz.yml
+    data/states/ua.yml
+    data/states/us.yml
     lib/countlist.rb
+    spec/countlist_spec.rb
+    spec/spec_helper.rb
   ]
   # = MANIFEST =
 
