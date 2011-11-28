@@ -1,3 +1,4 @@
+# encoding: utf-8
 ## This is the rakegem gemspec template. Make sure you read and understand
 ## all of the comments. Some sections require modification, and others can
 ## be deleted if you don't need them. Once you understand the contents of
