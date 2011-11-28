@@ -11,7 +11,7 @@ module Countlist
       @iso_codes ||= YAML::load(data_file('iso.yml'))
     end
 
-    def country_code(country_name)
+    def code_of(country_name)
       countries.detect {|k, v| v == country_name}.first
     end
 
