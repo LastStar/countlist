@@ -1,6 +1,6 @@
 require 'yaml'
 module Countlist
-  VERSION = '0.1.0'
+  VERSION = '0.2.0'
 
   module Countries
     def countries
@@ -30,6 +30,10 @@ module Countlist
     def states(country)
       @states ||= {}
       @states[country] ||= YAML::load(data_file("states/#{country.downcase}.yml"))
+    end
+
+    def states_names(country)
+      states(country).map {|k, v| v}
     end
 
     def countries_with_states

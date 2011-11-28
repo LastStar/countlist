@@ -29,13 +29,16 @@ describe 'Countlist' do
       object.number_iso_code('CZ').should == 203
     end
     it "returns country code from country name" do
-      object.country_code('Czech Republic').should == 'CZ'
+      object.code_of('Czech Republic').should == 'CZ'
     end
     it "returns all country names" do
       object.country_names[59].should == 'Czech Republic'
     end
-    it "returns all us states" do
+    it "returns all US states" do
       object.states('US')['AL'].should == 'Alabama'
+    end
+    it "returns all US state names" do
+      object.states_names('US').first.should == 'Alabama'
     end
     it "returns all countries with states" do
       object.countries_with_states.should == ["AU", "BR", "CA", "CU", "DE",
