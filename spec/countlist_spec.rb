@@ -45,5 +45,11 @@ describe 'Countlist' do
                                               "DK", "ES", "HR", "IN", "IT",
                                               "MX", "NO", "NZ", "UA", "US"]
     end
+    it "returns if country is in EU" do
+      object.in_EU?('CZ').should be_true
+    end
+    it "returns if country is not in EU" do
+      object.in_EU?('US').should be_false
+    end
   end
 end

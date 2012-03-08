@@ -42,6 +42,11 @@ module Countlist
       end
     end
 
+    def in_EU?(country)
+      @eu ||= YAML::load(organization_file('eu'))
+      @eu.include? country
+    end
+
     private
     def data_dir
       File.expand_path(File.join(File.dirname(__FILE__), '../data'))
@@ -49,6 +54,10 @@ module Countlist
 
     def data_file(file)
       File.read(File.join(data_dir, file))
+    end
+
+    def organization_file(code)
+      File.read(File.join(data_dir, '/organizations/', code + '.yml'))
     end
   end
 
