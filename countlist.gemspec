@@ -62,6 +62,7 @@ Gem::Specification.new do |s|
     countlist.gemspec
     data/en.yml
     data/iso.yml
+    data/organizations/eu.yml
     data/states/au.yml
     data/states/br.yml
     data/states/ca.yml
