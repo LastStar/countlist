@@ -5,6 +5,15 @@ module Countlist
   module Countries
     def countries
       @countries ||= YAML::load(data_file('en.yml'))
+      if @importance && !@importance.empty?
+        a = {}
+        @importance.each do |code|
+          a[code] = @countries.delete(code)
+        end
+        @countries = a.merge(@countries)
+      end
+
+      return @countries
     end
 
     def iso_codes
@@ -45,6 +54,10 @@ module Countlist
     def in_EU?(country)
       @eu ||= YAML::load(organization_file('eu'))
       @eu.include? country
+    end
+
+    def importance=(sort)
+      @importance = sort
     end
 
     private

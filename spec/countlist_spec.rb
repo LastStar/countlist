@@ -51,5 +51,11 @@ describe 'Countlist' do
     it "returns if country is not in EU" do
       object.in_EU?('US').should be_false
     end
+    context "when sorting by importance" do
+      it "returns countries by importance" do
+        object.importance = ['US', 'CZ', 'DE']
+        object.countries.first.should == ['US', 'United States']
+      end
+    end
   end
 end
