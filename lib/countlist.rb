@@ -56,7 +56,7 @@ module Countlist
       @eu.include? country
     end
 
-    def importance=(sort)
+    def importance(*sort)
       @importance = sort
     end
 

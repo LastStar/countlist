@@ -53,8 +53,12 @@ describe 'Countlist' do
     end
     context "when sorting by importance" do
       it "returns countries by importance" do
-        object.importance = ['US', 'CZ', 'DE']
+        object.importance('US', 'CZ', 'DE')
         object.countries.first.should == ['US', 'United States']
+      end
+      it "returns country names by importance" do
+        object.importance('US', 'CZ', 'DE')
+        object.country_names.first.should == 'United States'
       end
     end
   end
