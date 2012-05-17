@@ -10,7 +10,9 @@ module Countlist
         @importance.each do |code|
           a[code] = @countries.delete(code)
         end
-        a[''] = '----------------------'
+        if @separator
+          a[''] = @separator
+        end
         @countries = a.merge(@countries)
       end
 
@@ -59,6 +61,10 @@ module Countlist
 
     def importance(*sort)
       @importance = sort
+    end
+
+    def separator(sep)
+      @separator = sep
     end
 
     private

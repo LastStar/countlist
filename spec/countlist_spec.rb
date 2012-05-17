@@ -60,6 +60,11 @@ describe 'Countlist' do
         object.importance('US', 'CZ', 'DE')
         object.country_names.first.should == 'United States'
       end
+      it "can set separator" do
+        object.importance('US')
+        object.separator('- - - - - - - - - -')
+        object.countries[''].should == '- - - - - - - - - -'
+      end
     end
   end
 end
