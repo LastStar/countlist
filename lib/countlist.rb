@@ -10,6 +10,7 @@ module Countlist
         @importance.each do |code|
           a[code] = @countries.delete(code)
         end
+        a[''] = '----------------------'
         @countries = a.merge(@countries)
       end
 
